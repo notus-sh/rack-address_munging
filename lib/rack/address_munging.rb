@@ -1,4 +1,4 @@
-require "rack/address_munging/version"
+# frozen_string_literal: true
 
 module Rack
   module AddressMunging
