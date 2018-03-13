@@ -7,6 +7,7 @@ require 'rack/address_munging/version'
 Gem::Specification.new do |spec|
   spec.name          = 'rack-address_munging'
   spec.version       = Rack::AddressMunging::VERSION
+  spec.licenses      = ['Apache-2.0']
   spec.authors       = ['Gaël-Ian Havard']
   spec.email         = ['gael-ian@notus.sh']
 
