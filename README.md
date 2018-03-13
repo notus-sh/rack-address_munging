@@ -1,5 +1,7 @@
 # Rack::AddressMunging
 
+[![Build Status](https://travis-ci.org/notus-sh/rack-address_munging.svg?branch=master)](https://travis-ci.org/notus-sh/rack-address_munging)
+
 `Rack::AddressMunging` is a Rack middleware for automatic [e-mail addresses munging](https://en.wikipedia.org/wiki/Address_munging).
 
 Once added to your middleware stack, `Rack::AddressMunging` will parse the body of any HTML response and mung it to obfuscate email addresses, in hope to prevent spambots to collect them too easily.
