@@ -3,6 +3,16 @@
 require 'rack/response'
 
 module Rack
+  # The Rack::AddressMunging middleware, meant to be used in your Rack stack.
+  #
+  # All other modules meant for use in your application are <tt>autoload</tt>ed here,
+  # so it should be enough just to <tt>require 'rack/address_munging'</tt> in your code.
+  #
+  # To add the middleware to your stack, use:
+  # <code>use Rack::AddressMunging</code>
+  #
+  # If you want to use another munging strategy, precise it as an argument:
+  # <code>use Rack::AddressMunging, strategy: :hex</code>
   class AddressMunging
     autoload :Strategy,   'rack/address_munging/strategy'
     autoload :Detection,  'rack/address_munging/detection'

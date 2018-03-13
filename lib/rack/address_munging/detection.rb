@@ -5,6 +5,8 @@ require 'ipaddr'
 
 module Rack
   class AddressMunging
+    # This module contains email address detection and validation methods.
+    # It is meant to be included in any munging strategy.
     module Detection
       REGEXP_EMAIL  = /[a-z0-9][^@\s'":<>]+@[^@\s'":<>]+[a-z0-9]/i
       REGEXP_MAILTO = /mailto:#{REGEXP_EMAIL}/i

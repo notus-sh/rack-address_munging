@@ -3,6 +3,10 @@
 module Rack
   class AddressMunging
     module Strategy
+      # The <tt>:Hex</tt> munging strategy
+      #
+      # Will replace email addresses and mailto href attributes values with
+      # an hexadecimal HTML entities alternative.
       class Hex
         include Detection
 

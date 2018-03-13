@@ -3,6 +3,16 @@
 module Rack
   class AddressMunging
     module Strategy
+      # The <tt>:Rot13JS</tt> munging strategy
+      #
+      # Will replace email addresses and full mailto links with a <tt><script></tt> tag
+      # that will print it back into the page, based on a ROT13 version.
+      #
+      # The ROT13 implementation used here is a bit different as the original one will not
+      # replace <tt>@</tt>. This fix it, applying a second replacement to switch <tt>@</tt>
+      # with <tt>(at)</tt> in the munged string.
+      #
+      # This strategy does not handle email addresses containing UTF-8 entities.
       class Rot13JS
         include Detection
 
