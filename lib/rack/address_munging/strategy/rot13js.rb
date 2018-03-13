@@ -3,13 +3,13 @@
 module Rack
   class AddressMunging
     module Strategy
-      class Hex
+      class Rot13JS
         include Detection
 
         def apply(munged, original)
           original.each do |part|
             part = part.dup if part.frozen?
-            part.gsub!(REGEXP_MAILTO) { |m| maybe_encode(m) }
+            part.gsub!(REGEXP_LINK)   { |m| maybe_encode(m) }
             part.gsub!(REGEXP_EMAIL)  { |m| maybe_encode(m) }
             munged.write part
           end
@@ -19,11 +19,13 @@ module Rack
 
         def maybe_encode(string)
           s = to_s(string)
-          email?(s.gsub(/^mailto:/, '')) ? encode(s) : s
+          s.scan(REGEXP_EMAIL).collect { |m| email?(to_s(m)) }.any? ? encode(s) : s
         end
 
         def encode(str)
-          to_s(str).unpack('C*').map { |c| format('&#%<c>d;', c: c) }.join
+          <<-ENCODED.strip
+          <script type="text/javascript">document.write("#{to_s(str).tr('A-Za-z', 'N-ZA-Mn-za-m').gsub('@', '(at)')}".replace(/\(at\)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>
+          ENCODED
         end
 
         # Normalize a match as a string

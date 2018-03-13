@@ -7,10 +7,12 @@ module Rack
     autoload :Strategy,   'rack/address_munging/strategy'
     autoload :Detection,  'rack/address_munging/detection'
 
+    attr_reader :strategy
+
     def initialize(app, options = {})
       @app = app
-      @options = options.merge(strategy: :Hex)
-      @strategy = Strategy::Hex.new # .const_get(@options[:strategy])
+      @options = { strategy: :Hex }.merge(options)
+      @strategy = Strategy.const_get(@options[:strategy]).new
     end
 
     def call(env)

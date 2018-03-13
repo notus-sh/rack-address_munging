@@ -2,13 +2,41 @@
 samples:
   -
     source: |
+      email@example.com
+    result:
+      hex: |
+        &#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;
+      rot13js: |
+        <script type="text/javascript">document.write("rznvy(at)rknzcyr.pbz".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>
+  -
+    source: |
       <a href="mailto:email@example.com">email@example.com</a>
     result:
       hex: |
         <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>
+      rot13js: |
+        <script type="text/javascript">document.write("<n uers="znvygb:rznvy(at)rknzcyr.pbz">rznvy(at)rknzcyr.pbz</n>".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>
   -
     source: |
-       <p>In dapibus velit quis ultricies tincidunt. Aenean vel blandit nisi. Quisque pulvinar sapien interdum ex molestie, quis cursus mauris dapibus. Aenean volutpat sagittis rhoncus. Nullam scelerisque in leo eget tincidunt. Etiam laoreet, orci ac tempor mollis, <a href="mailto:email@example.com">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices. Nulla vel odio id nulla bibendum ultricies et sed turpis. Aenean nisi orci, faucibus sagittis quam vel, consequat interdum magna.</p>
+       <p>Etiam laoreet, orci ac tempor mollis, <a href="mailto:email.example.com">email@example.com</a>. Sed blandit quis nibh id ultrices.</p>
     result:
       hex: |
-        <p>In dapibus velit quis ultricies tincidunt. Aenean vel blandit nisi. Quisque pulvinar sapien interdum ex molestie, quis cursus mauris dapibus. Aenean volutpat sagittis rhoncus. Nullam scelerisque in leo eget tincidunt. Etiam laoreet, orci ac tempor mollis, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices. Nulla vel odio id nulla bibendum ultricies et sed turpis. Aenean nisi orci, faucibus sagittis quam vel, consequat interdum magna.</p>
+        <p>Etiam laoreet, orci ac tempor mollis, <a href="mailto:email.example.com">&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>. Sed blandit quis nibh id ultrices.</p>
+      rot13js: |
+        <p>Etiam laoreet, orci ac tempor mollis, <a href="mailto:email.example.com"><script type="text/javascript">document.write("rznvy(at)rknzcyr.pbz".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script></a>. Sed blandit quis nibh id ultrices.</p>
+  -
+    source: |
+       <p>In dapibus velit quis ultricies tincidunt. Aenean volutpat sagittis rhoncus. Etiam laoreet, orci ac tempor mollis, <a href="mailto:email@example.com">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices.</p>
+    result:
+      hex: |
+        <p>In dapibus velit quis ultricies tincidunt. Aenean volutpat sagittis rhoncus. Etiam laoreet, orci ac tempor mollis, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices.</p>
+      rot13js: |
+        <p>In dapibus velit quis ultricies tincidunt. Aenean volutpat sagittis rhoncus. Etiam laoreet, orci ac tempor mollis, <script type="text/javascript">document.write("<n uers="znvygb:rznvy(at)rknzcyr.pbz">ynphf ahap phefhf avfv</n>".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices.</p>
+  -
+    source: |
+       <p>In dapibus velit quis ultricies tincidunt. Aenean volutpat sagittis rhoncus. Etiam laoreet, orci ac tempor mollis, <a href="mailto:email@example.com">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices: <a class="main-contact" href="mailto:email@example.com">email@example.com</a>, <a href="mailto:email@example.com" title="Etiam laoreet">email@example.com</a> eto <a href="mailto:email@example.com"><em>fiat lux</em></a></p>
+    result:
+      hex: |
+        <p>In dapibus velit quis ultricies tincidunt. Aenean volutpat sagittis rhoncus. Etiam laoreet, orci ac tempor mollis, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices: <a class="main-contact" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;" title="Etiam laoreet">&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a> eto <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;"><em>fiat lux</em></a></p>
+      rot13js: |
+        <p>In dapibus velit quis ultricies tincidunt. Aenean volutpat sagittis rhoncus. Etiam laoreet, orci ac tempor mollis, <script type="text/javascript">document.write("<n uers="znvygb:rznvy(at)rknzcyr.pbz">ynphf ahap phefhf avfv</n>".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices: <script type="text/javascript">document.write("<n pynff="znva-pbagnpg" uers="znvygb:rznvy(at)rknzcyr.pbz">rznvy(at)rknzcyr.pbz</n>".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>, <script type="text/javascript">document.write("<n uers="znvygb:rznvy(at)rknzcyr.pbz" gvgyr="Rgvnz ynberrg">rznvy(at)rknzcyr.pbz</n>".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script> eto <script type="text/javascript">document.write("<n uers="znvygb:rznvy(at)rknzcyr.pbz"><rz>svng yhk</rz></n>".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script></p>
