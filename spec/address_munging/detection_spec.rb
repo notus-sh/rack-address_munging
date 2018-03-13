@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe Rack::AddressMunging::Detection do
-  let(:emails) { YAML.load_file('spec/data/emails.yml')['emails'] }
+  let(:emails) { load_data('detection')['emails'] }
   subject do
     klass = Class.new { include Rack::AddressMunging::Detection }
     klass.new

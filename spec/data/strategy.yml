@@ -1,0 +1,14 @@
+---
+samples:
+  -
+    source: |
+      <a href="mailto:email@example.com">email@example.com</a>
+    result:
+      hex: |
+        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>
+  -
+    source: |
+       <p>In dapibus velit quis ultricies tincidunt. Aenean vel blandit nisi. Quisque pulvinar sapien interdum ex molestie, quis cursus mauris dapibus. Aenean volutpat sagittis rhoncus. Nullam scelerisque in leo eget tincidunt. Etiam laoreet, orci ac tempor mollis, <a href="mailto:email@example.com">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices. Nulla vel odio id nulla bibendum ultricies et sed turpis. Aenean nisi orci, faucibus sagittis quam vel, consequat interdum magna.</p>
+    result:
+      hex: |
+        <p>In dapibus velit quis ultricies tincidunt. Aenean vel blandit nisi. Quisque pulvinar sapien interdum ex molestie, quis cursus mauris dapibus. Aenean volutpat sagittis rhoncus. Nullam scelerisque in leo eget tincidunt. Etiam laoreet, orci ac tempor mollis, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">lacus nunc cursus nisi</a>, id fermentum magna leo in elit. Sed blandit quis nibh id ultrices. Nulla vel odio id nulla bibendum ultricies et sed turpis. Aenean nisi orci, faucibus sagittis quam vel, consequat interdum magna.</p>

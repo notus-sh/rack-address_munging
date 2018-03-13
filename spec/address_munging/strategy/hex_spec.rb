@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 describe Rack::AddressMunging::Strategy::Hex do
-  let(:hex) { YAML.load_file('spec/data/hex.yml')['hex'] }
+  let(:samples) { load_data('strategy')['samples'] }
 
   it 'replaces address with an hex encoded version' do
-    source = ::Rack::Response.new([hex['source']])
-    munged = ::Rack::Response.new
+    samples.shuffle.each do |sample|
+      source = ::Rack::Response.new([sample['source']])
+      munged = ::Rack::Response.new
 
-    subject.apply(munged, source)
-    expect(munged.body.first).to eq(hex['result'])
+      subject.apply(munged, source)
+      expect(munged.body.first).to eq(sample['result']['hex'])
+    end
   end
 end
