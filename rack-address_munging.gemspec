@@ -15,6 +15,12 @@ Gem::Specification.new do |spec|
   spec.description   = 'A Rack middleware for automatic e-mail addresses munging.'
   spec.homepage      = 'https://github.com/notus-sh/rack-address_munging'
 
+  if spec.respond_to?(:metadata)
+    spec.metadata["allowed_push_host"] = 'https://rubygems.org'
+  else
+    raise "RubyGems 2.0 or newer is required."
+  end
+
   spec.require_paths = ['lib']
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
