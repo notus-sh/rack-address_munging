@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/notus-sh/rack-address_munging'
 
   raise 'RubyGems 2.0 or newer is required.' unless spec.respond_to?(:metadata)
+
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
   spec.require_paths = ['lib']
