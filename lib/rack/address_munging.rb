@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rack/response'
+require 'rack'
 
 module Rack
   # The Rack::AddressMunging middleware, meant to be used in your Rack stack.
