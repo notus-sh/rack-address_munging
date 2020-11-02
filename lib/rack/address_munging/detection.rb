@@ -8,15 +8,16 @@ module Rack
     # This module contains email address detection and validation methods.
     # It is meant to be included in any munging strategy.
     module Detection
-      REGEXP_EMAIL  = /[a-z0-9][^@\s'":<>]+@[^@\s'":<>]+[a-z0-9]/i
-      REGEXP_MAILTO = /mailto:#{REGEXP_EMAIL}/i
-      REGEXP_LINK   = %r{<a[^>]+?href="#{REGEXP_MAILTO}"[^>]*?>.+?</a>}i
+      REGEXP_EMAIL  = /[a-z0-9][^@\s'":<>]+@[^@\s'":<>]+[a-z0-9]/i.freeze
+      REGEXP_MAILTO = /mailto:#{REGEXP_EMAIL}/i.freeze
+      REGEXP_LINK   = %r{<a[^>]+?href="#{REGEXP_MAILTO}"[^>]*?>.+?</a>}i.freeze
 
       def email?(string)
         m = ::Mail::Address.new(string)
         return false unless m.address == string
         return false unless valid_local?(m.local)
         return false unless valid_domain?(m.domain)
+
         true
       rescue StandardError
         false
@@ -28,6 +29,7 @@ module Rack
         return false if local.include?('..')      # Can't contain ..
         return false if local.include?('@')       # Can't contain an @
         return false unless local !~ /^"?\s+"?$/  # Can't be blank
+
         true
       end
 
@@ -36,6 +38,7 @@ module Rack
         return false if local_domain?(domain)
         return false if hires_image?(domain)
         return false if domain.include?('..') # Can't contain ..
+
         true
       end
 
