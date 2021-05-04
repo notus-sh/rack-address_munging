@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
 
-  spec.required_ruby_version = '>= 2.5'
+  spec.required_ruby_version = '>= 2.6'
 
   spec.add_dependency 'mail', '> 2.5.0'
   spec.add_dependency 'rack', '>= 2.1.4'
