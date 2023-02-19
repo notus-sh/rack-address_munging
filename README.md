@@ -1,6 +1,6 @@
 # Rack::AddressMunging
 
-![Build status](https://github.com/notus-sh/rack-address_munging/actions/workflows/unit-tests.yml/badge.svg?branch=main)
+[![Unit tests](https://github.com/notus-sh/rack-address_munging/actions/workflows/unit-tests.yml/badge.svg?branch=main)](https://github.com/notus-sh/rack-address_munging/actions/workflows/unit-tests.yml)
 [![Gem Version](https://badge.fury.io/rb/rack-address_munging.svg)](https://badge.fury.io/rb/rack-address_munging)
 
 `Rack::AddressMunging` is a Rack middleware for automatic [e-mail addresses munging](https://en.wikipedia.org/wiki/Address_munging).
