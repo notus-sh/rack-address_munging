@@ -34,7 +34,7 @@ module Rack
     private
 
     def html?
-      !(@headers['Content-Type'] =~ /html/).nil?
+      @headers['Content-Type'].include?('html')
     end
 
     def mung!

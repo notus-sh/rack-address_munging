@@ -34,7 +34,7 @@ module Rack
 
         def encode(str)
           <<-ENCODED.strip
-          <script type="text/javascript">document.write("#{to_s(str).tr('A-Za-z', 'N-ZA-Mn-za-m').gsub('@', '(at)')}".replace(/\(at\)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>
+          <script type="text/javascript">document.write("#{to_s(str).tr('A-Za-z', 'N-ZA-Mn-za-m').gsub('@', '(at)')}".replace(/(at)/, '@').replace(/[a-z]/gi,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});))</script>
           ENCODED
         end
 

@@ -108,6 +108,6 @@ end
 require 'rack'
 require 'rack/address_munging'
 
-def load_data(name)
-  YAML.load_file("spec/data/#{name}.yml")
+def load_fixtures(name)
+  YAML.load_file("spec/fixtures/#{name}.yml")
 end
