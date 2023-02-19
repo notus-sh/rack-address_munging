@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 
 * Migrate from Travis CI to Github Actions
+* Add Ruby 3.2 to the test matrix
 
 ## Version 0.1.4 (2022-08-05)
 
