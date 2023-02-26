@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
     'rubygems_mfa_required' => 'true',
 
     'bug_tracker_uri' => 'https://github.com/notus-sh/rack-address_munging/issues',
-    'changelog_uri' => 'https://github.com/notus-sh/rack-address_munging/blob/master/CHANGELOG.md',
+    'changelog_uri' => 'https://github.com/notus-sh/rack-address_munging/blob/main/CHANGELOG.md',
     'homepage_uri' => 'https://github.com/notus-sh/rack-address_munging',
     'source_code_uri' => 'https://github.com/notus-sh/rack-address_munging',
     'funding_uri' => 'https://opencollective.com/notus-sh'
