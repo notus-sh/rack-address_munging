@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
     f.match(excluded_dirs) || excluded_files.include?(f)
   end
 
-  spec.required_ruby_version = '>= 2.6'
+  spec.required_ruby_version = '>= 3.2'
 
   spec.add_dependency 'mail', '> 2.5.0'
   spec.add_dependency 'net-smtp'
